@@ -1,0 +1,29 @@
+<div id="home" class="header">
+  <a href="index.html"><div class="header-left">
+
+  </div></a>
+  <div class="header-right">
+    <span class="menu"><%= image_tag("menu.png") %></span>
+    <nav class="cl-effect-11" id="cl-effect-11">
+      <ul class="nav1">
+        <li><a  href="/" data-hover="HOME">HOME</a></li>
+        <li><a  href="/site/about" data-hover="ABOUT">ABOUT</a></li>
+        <li><a  href="/site/beneficiaries" data-hover="BENEFICIARIES">BENEFICIARIES</a></li>
+        <li><a  href="/site/donors" data-hover="DONORS">DONORS</a></li>
+        <li><a  href="/site/contact" data-hover="CONTACT">CONTACT</a></li>
+        <li><a  href="/site/blog" data-hover="BLOG">BLOG</a></li>
+        <li><a class="btn btn-danger donate-header" href="/site/donation">Donate</a></li>
+      </ul>
+    </nav>
+    <!-- script for menu -->
+    <script>
+        $( "span.menu" ).click(function() {
+            $( "ul.nav1" ).slideToggle( 300, function() {
+                // Animation complete.
+            });
+        });
+    </script>
+    <!-- //script for menu -->
+  </div>
+  <div class="clearfix"></div>
+</div>

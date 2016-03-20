@@ -1,0 +1,11 @@
+<h1>Users#delete</h1>
+<div>
+  <h2>Create User</h2>
+
+  <%= form_tag({:action => 'destroy',:id=>@user.id}) do %>
+      <p>Are you sure you want to delete user with id <%= @user.id%></p>
+
+          <td><%= submit_tag("delete User") %></td>
+
+  <%end %>
+</div>

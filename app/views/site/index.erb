@@ -1,0 +1,195 @@
+<!--banner-starts-->
+<div class="banner">
+  <div class="container">
+    <div class="banner-top">
+      <section class="slider">
+        <div class="flexslider">
+          <ul class="slides">
+            <li>
+              <div class="banner-text">
+                <h3>Silas Shyaka Education Fund </h3>
+
+                <p>A world of change one child at a time</p>
+              </div>
+            </li>
+            <li>
+              <div class="banner-text">
+                <h3>Silas Shyaka Education Fund</h3>
+
+                <p>Donate, Fundraise, Sponsor and Mentor</p>
+              </div>
+            </li>
+            <li>
+              <div class="banner-text">
+                <h3>Silas Shyaka Education Fund</h3>
+
+                <p>A world of change, one child at a time</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div>
+    <p style="text-align:center;padding-top:50px;"><a href="/site/donation" class="btn btn-primary donate">Donate</a></p>
+  </div>
+</div>
+<!--banner-end-->
+<!--FlexSlider-->
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen"/>
+<script defer src="js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            start: function (slider) {
+                $('body').removeClass('loading');
+            }
+        });
+    });
+</script>
+<!--End-slider-script-->
+<!--welcome-starts-->
+<div class="welcome">
+  <div class="container">
+    <div class="welcome-top">
+      <div class="col-md-4 welcome-left heading">
+        <h2>Welcome</h2>
+       <!-- <h5>Shyaka Silas Eduction Fund</h5>-->
+
+        <p style="text-align: justify">SSEF is a nonprofit organization that provides education opportunities for
+          disadvantaged children from Koch
+          Lii, Nwoya district, Northern Uganda. It is registered as a company limited by guarantee.</p>
+      </div>
+      <div class="col-md-4 welcome-left">
+        <div class="welcome-one">
+          <div class="wel-left">
+            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+          </div>
+          <div class="wel-right">
+            <h4>Donate</h4>
+
+            <p> When you donate to SSEF, your donation is used efficiently in support for the koch lii programs.</p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="welcome-two">
+          <div class="wel-left">
+            <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
+          </div>
+          <div class="wel-right">
+            <h4>Sponsor/Mentor a Child </h4>
+
+            <p> Either through a formal mentoring program or informally through a family friend or community member </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="col-md-4 welcome-left">
+        <div class="welcome-one">
+          <div class="wel-left">
+            <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+          </div>
+          <div class="wel-right">
+            <h4>Fundraise</h4>
+
+            <p>Fundraising is an important core income stream for SSEF especially in times of
+              recession. </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="welcome-two">
+          <div class="wel-left">
+            <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+          </div>
+          <div class="wel-right">
+            <h4>Need an EmCee? </h4>
+
+            <p>SSEF volunteers EmCee at public and private functions as contributions to the fund.</p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<!--welcome-end-->
+<!--events-starts-->
+<div class="events">
+  <div class="container">
+    <div class="events-top heading">
+      <h3>Activities</h3>
+
+    </div>
+    <div class="events-bottom">
+      <div class="col-md-6 event-left">
+        <img src="/uploads/<%= @latest_article.lead_image %>" width="100%" class="img-responsive">
+
+        <div class="event">
+          <a href="/site/blog/show/<%= @latest_article.id %>"><h4><%= @latest_article.title %></h4></a>
+
+          <p><%= @latest_article.body[0 .. 300].gsub(/\s\w+\s*$/, '...').html_safe %></p>
+        </div>
+        <div class="date">
+          <p><%= ActiveSupport::TimeZone["Central Time (US & Canada)"]
+                 .parse(@latest_article.created_at.to_s).utc.to_date.strftime("%b %e, %Y") %></p>
+        </div>
+      </div>
+      <div class="col-md-3 event-right">
+        <div class="e-1">
+          <%= image_tag("e2.jpg") %>
+          <h4>Outreach Program to Koch Lii Primary School</h4>
+        </div>
+        <div class="e-2">
+          <%= image_tag("e3.jpg") %>
+          <h4>SSEF Village</h4>
+
+        </div>
+      </div>
+      <div class="col-md-3 event-right">
+        <div class="e-1">
+          <%= image_tag("e4.jpg") %>
+          <h4>Fundraising & Volunteer Campaign</h4>
+        </div>
+        <div class="e-2">
+          <%= image_tag("e5.jpg") %>
+          <h4>EmCee4Fees</h4>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<!--events-end-->
+<!--help-starts-->
+<div class="help">
+  <div style="background:#019CDC">
+    <div class="help-left">
+      <%= image_tag("ach.jpg") %>
+    </div>
+    <div class="help-right heading">
+      <h3>Achievements</h3>
+      <h5>Since its inception in 2011, SSEF has achieved the following</h5>
+      <ul class="ach" style="margin-left:20px;">
+        <li>Educated 6 students up to S.4 level</li>
+        <li>Established a working relationship with the community of Koch Lii village in Nwoya district where the
+          beneficiaries come from
+        </li>
+        <li>Created social connections between the beneficiaries of the fund and their benefactors, some of whom are
+          in far flung corners of the globe.
+        </li>
+
+      </ul>
+
+
+      <div class="tool">
+        <a class="tooltips" href="#">
+        </a>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!--help-end-->

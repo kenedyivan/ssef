@@ -1,0 +1,46 @@
+<!--contact-starts-->
+<div class="contact">
+  <div class="container">
+    <div class="about-top heading" style="margin-bottom:20px">
+      <h2>Contact Us</h2>
+    </div>
+    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+    <div style='overflow:hidden;height:400px;width:100%;'>
+      <div id='gmap_canvas' style='height:400px;width:100%;'></div>
+      <style>#gmap_canvas img {
+          max-width: none !important;
+          background: none !important
+      }</style>
+    </div>
+    <a href='https://embedmaps.net'>embedmaps</a>
+    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=b158ce75513471896d692f2db506fc815f063602'></script>
+    <script type='text/javascript'>function init_map() {
+        var myOptions = {zoom: 12, center: new google.maps.LatLng(0.3595270835994324, 32.62571514820967), mapTypeId: google.maps.MapTypeId.ROADMAP};
+        map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+        marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(0.3595270835994324, 32.62571514820967)});
+        infowindow = new google.maps.InfoWindow({content: '<strong></strong><br>namuli<br> kampala<br>'});
+        google.maps.event.addListener(marker, 'click', function () {
+            infowindow.open(map, marker);
+        });
+        infowindow.open(map, marker);
+    }
+    google.maps.event.addDomListener(window, 'load', init_map);</script>
+    <div class="contact-form heading">
+      <h3>Contact Form</h3>
+
+      <div class="contact-bottom">
+        <form method="get" action="/site/send_mail">
+          <input type="text" placeholder="Name" name="name">
+          <input type="text" placeholder="Your email" name="email">
+          <input type="text" placeholder="Phone" name="phone">
+          <textarea placeholder="Message" required name="message"></textarea>
+
+          <div class="submit-btn">
+            <input type="submit" value="SUBMIT">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--contact-end-->

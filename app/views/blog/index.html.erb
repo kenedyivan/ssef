@@ -1,0 +1,72 @@
+<!--contact-starts-->
+<div class="contact">
+  <div class="container">
+    <div class="contact-top heading">
+      <h2>Our Blog</h2>
+    </div>
+    <div class="map">
+
+
+      <section id="blog" class="container">
+        <div class="row">
+          <aside class="col-sm-4 col-sm-push-8">
+
+            <div class="widget facebook-fanpage">
+              <h3 style="margin-top:0px;color:#019CDC;">Facebook Fanpage</h3>
+
+              <div class="widget-content">
+                <div class="fb-like-box" data-href="https://www.facebook.com/shapebootstrap"
+                     data-width="292" data-show-faces="true" data-header="false" data-stream="false"
+                     data-show-border="false"></div>
+              </div>
+            </div>
+          </aside>
+
+          <div class="col-sm-8 col-sm-pull-4">
+            <div class="blog">
+              <% @articles.each do |a| %>
+
+                  <div class="blog-item">
+                    <img src="/uploads/<%= a.lead_image %>" class="img-responsive img-blog">
+
+                    <div class="blog-content">
+
+                      <a href="#"><h3><%= a.title %></h3></a>
+
+                      <div class="entry-meta">
+                        <span><i class="icon-user"></i> <a href="#"><%= a.user.username %></a></span>
+                        <span><i class="icon-calendar"></i> <%= ActiveSupport::TimeZone["Central Time (US & Canada)"]
+                                                                .parse(a.created_at.to_s).utc.to_date.strftime("%b %e, %Y") %></span>
+                        <!--<span><i class="icon-comment"></i> <a href="blog-item.html#comments">3 Comments</a></span>-->
+                      </div>
+                      <p><%= a.body[0 .. 300].gsub(/\s\w+\s*$/, '...').html_safe %></p>
+                      <a class="btn btn-default" href="/ssef/blog_item">Read More <i class="icon-angle-right"></i></a>
+                    </div>
+                  </div>
+                  <!--/.blog-item-->
+              <% end %>
+
+
+              <!--<ul class="pagination pagination-lg">
+                <li><a href="#"><i class="icon-angle-left"></i></a></li>
+                <li><a href="/site/blog">1</a></li>
+                <li><a href="/site/blog?offset=2&limit=2">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#"><i class="icon-angle-right"></i></a></li>
+              </ul>-->
+              <!--/.pagination-->
+            </div>
+          </div>
+          <!--/.col-md-8-->
+        </div>
+        <!--/.row-->
+      </section>
+      <!--/#blog-->
+    </div>
+
+
+  </div>
+</div>
+<!--contact-end-->
